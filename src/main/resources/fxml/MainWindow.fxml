@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttcolorpicker.controller.MainWindowController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -22,13 +21,13 @@
                      <children>
                         <VBox prefHeight="50.0" prefWidth="328.0">
                            <children>
-                              <ComboBox prefHeight="25.0" prefWidth="352.0" />
+                              <ComboBox id="cbSelectPalette" prefHeight="25.0" prefWidth="352.0" />
                               <HBox prefHeight="0.0" prefWidth="258.0">
                                  <children>
-                                    <Button mnemonicParsing="false" text="New" />
-                                    <Button mnemonicParsing="false" text="Edit" />
-                                    <Button mnemonicParsing="false" text="Delete" />
-                                    <Button mnemonicParsing="false" text="Recreate" />
+                                    <Button id="btnPalettesNew" mnemonicParsing="false" text="New" />
+                                    <Button id="btnPalettesEdit" mnemonicParsing="false" text="Edit" />
+                                    <Button id="btnPalettesDelete" mnemonicParsing="false" text="Delete" />
+                                    <Button id="btnPalettesRecreate" mnemonicParsing="false" text="Recreate" />
                                  </children>
                               </HBox>
                            </children>
