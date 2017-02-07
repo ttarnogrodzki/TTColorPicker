@@ -4,12 +4,17 @@ import javafx.scene.paint.Color;
 
 public class PaletteEntry {
 
-	public String 	Name;
-	public Color[] 	Colors = new Color[16];
-	
+	public String Name;
+	public Color[] Colors = new Color[16];
+
 	public void ClearColors() {
 		for (int i = 0; i < Colors.length; i++)
-			Colors[i] = Color.TRANSPARENT;		
+			Colors[i] = Color.TRANSPARENT;
 	}
-	
+
+	@Override
+	public String toString() {
+		return Name;
+	}
+
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TitledPane?>
@@ -21,7 +22,7 @@
                      <children>
                         <VBox prefHeight="50.0" prefWidth="328.0">
                            <children>
-                              <ComboBox id="cbSelectPalette" prefHeight="25.0" prefWidth="352.0" />
+                              <ComboBox fx:id="cbSelectPalette" onAction="#handlecbSelectPaletteAction" prefHeight="25.0" prefWidth="352.0" />
                               <HBox prefHeight="0.0" prefWidth="258.0">
                                  <children>
                                     <Button id="btnPalettesNew" mnemonicParsing="false" text="New" />
@@ -44,28 +45,29 @@
                            <children>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip1" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip2" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip3" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip4" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip5" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip6" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip7" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip8" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip9" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip10" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip11" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip12" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip13" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip14" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip15" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
                                  </children>
                               </HBox>
+                              <Label text="Label" />
                            </children>
                         </VBox>
                      </children>

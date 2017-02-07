@@ -12,7 +12,8 @@ public class PaletteEntryController {
 	public void Recreate() {
 
 		Palettes.clear();
-		
+		//TODO fill it in loops
+		//TODO oughta find more elegant way 'coz it suxx 
 		PaletteEntry item = new PaletteEntry();
 		item.Name = "Basic Colors";
 		item.ClearColors();
