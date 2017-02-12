@@ -10,4 +10,4 @@ App is divided into five sections: Palettes, Chips, Color, Mixer and Magnify.
 - Chips are colors in those Palettes.
 - Color is simply chosen color, with hex and dec representation.
 - Mixer is used for chosing color in a different ways (hex, rainbow, hue, sliders).
-- Magnify is for picking color frm screen.
+- Magnify is for picking color from screen.
