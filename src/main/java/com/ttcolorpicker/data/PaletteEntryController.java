@@ -17,7 +17,7 @@ public class PaletteEntryController {
 		PaletteEntry item = new PaletteEntry();
 		item.Name = "Basic Colors";
 		item.ClearColors();
-		item.Colors[0] = Color.web("1D3237");
+		item.Colors[0] = Color.web("FF0000");
 		item.Colors[1] = Color.web("FFFF00");
 		item.Colors[2] = Color.web("00FF00");
 		item.Colors[3] = Color.web("00FFFF");

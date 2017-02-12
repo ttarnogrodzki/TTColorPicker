@@ -5,6 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 import com.ttcolorpicker.data.PaletteEntry;
@@ -60,6 +63,12 @@ public class MainWindowController {
 	private Button btnChip14;
 	@FXML
 	private Button btnChip15;
+	@FXML
+	private Pane pnColor;
+	@FXML
+	private TextField edDecColorValue;
+	@FXML
+	private TextField edHexColorValue;
 	/////////////////////////////////////////////////
 
 	public MainWindowController() {
@@ -87,6 +96,10 @@ public class MainWindowController {
 		Chips[14] = btnChip14;
 		Chips[15] = btnChip15;
 
+		for (int i = 0; i < 16; i++) {
+			Chips[i].setUserData(i);
+		}
+
 		setData();
 	}
 
@@ -97,13 +110,23 @@ public class MainWindowController {
 	}
 
 	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnChipMouseClicked(MouseEvent event) {
+		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
+		if (event.getSource() instanceof Button) {
+			Button btn = (Button) event.getSource();
+			int idx = (int) btn.getUserData();
+
+			if (selectedPalette.Colors[idx] != Color.TRANSPARENT) {
+				pnColor.setStyle("-fx-background-color: #" + toRGBCode(selectedPalette.Colors[idx]));
+				edDecColorValue.setText( Integer.toUnsignedString( to24bitHashCode( selectedPalette.Colors[idx] ) ) );
+				edHexColorValue.setText(toRGBCode(selectedPalette.Colors[idx]));
+			}
+		}
+	}
+
+	// ---------------------------------------------------------------------------
 	public void setData() {
-
-		/*
-		 * cbSelectPalette.getItems().clear(); for (PaletteEntry pe :
-		 * PEController.Palettes) { cbSelectPalette.getItems().add( pe ); }
-		 */
-
 		for (PaletteEntry pe : PEController.Palettes) {
 			comboBoxData.add(pe);
 		}
@@ -114,18 +137,34 @@ public class MainWindowController {
 	}
 
 	// ---------------------------------------------------------------------------
+	// http://stackoverflow.com/questions/17925318/how-to-get-hex-web-string-from-javafx-colorpicker-color
+	private static String toRGBCode(Color color) {
+		return String.format("%02X%02X%02X", (int) (color.getRed() * 255), (int) (color.getGreen() * 255),
+				(int) (color.getBlue() * 255));
+	}
+	// ---------------------------------------------------------------------------
+	private static int to24bitHashCode(Color color) {
+        int r = (int) Math.round(color.getRed() * 255.0);
+        int g = (int) Math.round(color.getGreen() * 255.0);
+        int b = (int) Math.round(color.getBlue() * 255.0);
+       
+        int i = b;
+        i = i << 8;
+        i = i | g;
+        i = i << 8;
+        i = i | r;
+        return i;
+    }	
+	
+	// ---------------------------------------------------------------------------
 	private void FillChips() {
 		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
 		for (int i = 0; i < 16; i++) {
-			if ( selectedPalette.Colors[i] != Color.TRANSPARENT)
-				{ 
-				Chips[i].setStyle("-fx-background-color: #" + Integer.toHexString( selectedPalette.Colors[i].hashCode() ));				
-				}
-				else
-					{					
-					Chips[i].setStyle("");					
-					}
-					
+			if (selectedPalette.Colors[i] != Color.TRANSPARENT) {
+				Chips[i].setStyle("-fx-background-color: #" + toRGBCode(selectedPalette.Colors[i]));
+			} else {
+				Chips[i].setStyle("");
+			}
 		}
 	}
 	// ---------------------------------------------------------------------------

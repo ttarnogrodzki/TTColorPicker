@@ -5,14 +5,19 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttcolorpicker.controller.MainWindowController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttcolorpicker.controller.MainWindowController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
@@ -20,15 +25,27 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="326.0">
                      <children>
-                        <VBox prefHeight="50.0" prefWidth="328.0">
+                        <VBox prefHeight="50.0" prefWidth="297.0">
                            <children>
-                              <ComboBox fx:id="cbSelectPalette" onAction="#handlecbSelectPaletteAction" prefHeight="25.0" prefWidth="352.0" />
-                              <HBox prefHeight="0.0" prefWidth="258.0">
+                              <ComboBox fx:id="cbSelectPalette" onAction="#handlecbSelectPaletteAction" prefHeight="25.0" prefWidth="295.0" />
+                              <HBox prefHeight="26.0" prefWidth="273.0">
                                  <children>
-                                    <Button id="btnPalettesNew" mnemonicParsing="false" text="New" />
-                                    <Button id="btnPalettesEdit" mnemonicParsing="false" text="Edit" />
-                                    <Button id="btnPalettesDelete" mnemonicParsing="false" text="Delete" />
-                                    <Button id="btnPalettesRecreate" mnemonicParsing="false" text="Recreate" />
+                                    <Button id="btnPalettesNew" mnemonicParsing="false" text="New">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font></Button>
+                                    <Button id="btnPalettesEdit" mnemonicParsing="false" text="Edit">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font></Button>
+                                    <Button id="btnPalettesDelete" mnemonicParsing="false" text="Delete">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font></Button>
+                                    <Button id="btnPalettesRecreate" mnemonicParsing="false" text="Recreate">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font></Button>
                                  </children>
                               </HBox>
                            </children>
@@ -45,26 +62,26 @@
                            <children>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="btnChip0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip1" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip2" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip3" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip4" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip5" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip6" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip7" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip1" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip2" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip3" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip4" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip5" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip6" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip7" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="btnChip8" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip9" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip10" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip11" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip12" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip13" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip14" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
-                                    <Button fx:id="btnChip15" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" />
+                                    <Button fx:id="btnChip8" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip9" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip10" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip11" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip12" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip13" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip14" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Button fx:id="btnChip15" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
                                  </children>
                               </HBox>
                               <Label text="Label" />
@@ -76,7 +93,44 @@
             </TitledPane>
             <TitledPane animated="false" text="Color">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="107.0" prefWidth="326.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="107.0" prefWidth="326.0">
+                     <children>
+                        <HBox layoutX="59.0" layoutY="14.0" prefHeight="99.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Pane fx:id="pnColor" prefHeight="80.0" prefWidth="117.0" />
+                              <GridPane prefHeight="80.0" prefWidth="167.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="28.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="0.0" prefWidth="77.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="5.0" prefWidth="37.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" text="#" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" text="Copy" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                    <Button mnemonicParsing="false" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="edDecColorValue" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="1" />
+                                    <TextField fx:id="edHexColorValue" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
               </content>
             </TitledPane>
             <TitledPane animated="false" text="Mixer">
