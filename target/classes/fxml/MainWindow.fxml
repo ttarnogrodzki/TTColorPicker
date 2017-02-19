@@ -62,26 +62,26 @@
                            <children>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="btnChip0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip1" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip2" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip3" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip4" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip5" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip6" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip7" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip1" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip2" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip3" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip4" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip5" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip6" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip7" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                  </children>
                               </HBox>
                               <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="btnChip8" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip9" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip10" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip11" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip12" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip13" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip14" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Button fx:id="btnChip15" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip8" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip9" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip10" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip11" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip12" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip13" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip14" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
+                                    <Pane fx:id="btnChip15" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                  </children>
                               </HBox>
                               <Label text="Label" />

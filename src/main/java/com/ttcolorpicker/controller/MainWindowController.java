@@ -15,7 +15,7 @@ import com.ttcolorpicker.data.PaletteEntryController;
 
 public class MainWindowController {
 
-	Button[] Chips = new Button[16];
+	Pane[] Chips = new Pane[16];
 	PaletteEntryController PEController = new PaletteEntryController();
 
 	// http://stackoverflow.com/questions/30210170/is-fxml-needed-for-every-declaration
@@ -32,37 +32,37 @@ public class MainWindowController {
 	@FXML
 	private Button btnPalettesRecreate;
 	@FXML
-	private Button btnChip0;
+	private Pane btnChip0;
 	@FXML
-	private Button btnChip1;
+	private Pane btnChip1;
 	@FXML
-	private Button btnChip2;
+	private Pane btnChip2;
 	@FXML
-	private Button btnChip3;
+	private Pane btnChip3;
 	@FXML
-	private Button btnChip4;
+	private Pane btnChip4;
 	@FXML
-	private Button btnChip5;
+	private Pane btnChip5;
 	@FXML
-	private Button btnChip6;
+	private Pane btnChip6;
 	@FXML
-	private Button btnChip7;
+	private Pane btnChip7;
 	@FXML
-	private Button btnChip8;
+	private Pane btnChip8;
 	@FXML
-	private Button btnChip9;
+	private Pane btnChip9;
 	@FXML
-	private Button btnChip10;
+	private Pane btnChip10;
 	@FXML
-	private Button btnChip11;
+	private Pane btnChip11;
 	@FXML
-	private Button btnChip12;
+	private Pane btnChip12;
 	@FXML
-	private Button btnChip13;
+	private Pane btnChip13;
 	@FXML
-	private Button btnChip14;
+	private Pane btnChip14;
 	@FXML
-	private Button btnChip15;
+	private Pane btnChip15;
 	@FXML
 	private Pane pnColor;
 	@FXML
@@ -113,8 +113,8 @@ public class MainWindowController {
 	@FXML
 	private void onbtnChipMouseClicked(MouseEvent event) {
 		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
-		if (event.getSource() instanceof Button) {
-			Button btn = (Button) event.getSource();
+		if (event.getSource() instanceof Pane) {
+			Pane btn = (Pane) event.getSource();
 			int idx = (int) btn.getUserData();
 
 			if (selectedPalette.Colors[idx] != Color.TRANSPARENT) {
