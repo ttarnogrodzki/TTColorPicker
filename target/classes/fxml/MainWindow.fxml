@@ -56,14 +56,14 @@
             </TitledPane>
             <TitledPane animated="false" prefHeight="120.0" prefWidth="328.0" text="Chips">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="326.0" style="-fx-background-color: ababab;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="326.0">
                      <children>
                         <VBox layoutX="6.0" layoutY="2.0" prefHeight="5.0" prefWidth="303.0">
                            <children>
-                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: # 333333;">
+                              <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Pane fx:id="btnChip0" onMouseClicked="#onbtnChipMouseClicked" />
-                                    <Pane fx:id="btnChip1" minHeight="35.0" minWidth="35.0" onMouseClicked="#onpaneChipMouseClicked" />
+                                    <Pane fx:id="btnChip1" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                     <Pane fx:id="btnChip2" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                     <Pane fx:id="btnChip3" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                     <Pane fx:id="btnChip4" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
@@ -72,7 +72,7 @@
                                     <Pane fx:id="btnChip7" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Pane fx:id="btnChip8" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
                                     <Pane fx:id="btnChip9" minHeight="35.0" minWidth="35.0" onMouseClicked="#onbtnChipMouseClicked" />
