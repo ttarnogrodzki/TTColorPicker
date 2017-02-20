@@ -30,19 +30,19 @@
                               <ComboBox fx:id="cbSelectPalette" onAction="#handlecbSelectPaletteAction" prefHeight="25.0" prefWidth="295.0" />
                               <HBox prefHeight="26.0" prefWidth="273.0">
                                  <children>
-                                    <Button id="btnPalettesNew" mnemonicParsing="false" text="New">
+                                    <Button id="btnPalettesNew" mnemonicParsing="false" onMouseClicked="#onbtnNewMouseClicked" text="New">
                                        <font>
                                           <Font size="10.0" />
                                        </font></Button>
-                                    <Button id="btnPalettesEdit" mnemonicParsing="false" text="Edit">
+                                    <Button id="btnPalettesEdit" mnemonicParsing="false" onMouseClicked="#onbtnEditMouseClicked" text="Edit">
                                        <font>
                                           <Font size="10.0" />
                                        </font></Button>
-                                    <Button id="btnPalettesDelete" mnemonicParsing="false" text="Delete">
+                                    <Button id="btnPalettesDelete" mnemonicParsing="false" onMouseClicked="#onbtnDeleteMouseClicked" text="Delete">
                                        <font>
                                           <Font size="10.0" />
                                        </font></Button>
-                                    <Button id="btnPalettesRecreate" mnemonicParsing="false" text="Recreate">
+                                    <Button id="btnPalettesRecreate" mnemonicParsing="false" onMouseClicked="#onbtnRecreateMouseClicked" text="Recreate">
                                        <font>
                                           <Font size="10.0" />
                                        </font></Button>

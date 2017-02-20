@@ -6,9 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+
+import java.util.Optional;
 
 import com.ttcolorpicker.data.PaletteEntry;
 import com.ttcolorpicker.data.PaletteEntryController;
@@ -119,14 +122,47 @@ public class MainWindowController {
 
 			if (selectedPalette.Colors[idx] != Color.TRANSPARENT) {
 				pnColor.setStyle("-fx-background-color: #" + toRGBCode(selectedPalette.Colors[idx]));
-				edDecColorValue.setText( Integer.toUnsignedString( to24bitHashCode( selectedPalette.Colors[idx] ) ) );
+				edDecColorValue.setText(Integer.toUnsignedString(to24bitHashCode(selectedPalette.Colors[idx])));
 				edHexColorValue.setText(toRGBCode(selectedPalette.Colors[idx]));
 			}
 		}
 	}
 
+	@FXML
+	private void onbtnEditMouseClicked(MouseEvent event) {
+		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
+		TextInputDialog dialog = new TextInputDialog(selectedPalette.Name);
+		dialog.setTitle("Change palette name");
+		dialog.setHeaderText("New palette name");
+		dialog.setContentText("Please enter new palette name:");
+		Optional<String> result = dialog.showAndWait();
+		// look Ma, lambda! 
+		result.ifPresent(name -> selectedPalette.Name = name );
+		setData();
+	}
+
+	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnDeleteMouseClicked(MouseEvent event) {
+		
+	}
+
+	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnNewMouseClicked(MouseEvent event) {
+
+	}
+
+	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnRecreateMouseClicked(MouseEvent event) {
+		PEController.Recreate();
+		setData();
+	}
+
 	// ---------------------------------------------------------------------------
 	public void setData() {
+		comboBoxData.clear();
 		for (PaletteEntry pe : PEController.Palettes) {
 			comboBoxData.add(pe);
 		}
@@ -142,20 +178,21 @@ public class MainWindowController {
 		return String.format("%02X%02X%02X", (int) (color.getRed() * 255), (int) (color.getGreen() * 255),
 				(int) (color.getBlue() * 255));
 	}
+
 	// ---------------------------------------------------------------------------
 	private static int to24bitHashCode(Color color) {
-        int r = (int) Math.round(color.getRed() * 255.0);
-        int g = (int) Math.round(color.getGreen() * 255.0);
-        int b = (int) Math.round(color.getBlue() * 255.0);
-       
-        int i = b;
-        i = i << 8;
-        i = i | g;
-        i = i << 8;
-        i = i | r;
-        return i;
-    }	
-	
+		int r = (int) Math.round(color.getRed() * 255.0);
+		int g = (int) Math.round(color.getGreen() * 255.0);
+		int b = (int) Math.round(color.getBlue() * 255.0);
+
+		int i = b;
+		i = i << 8;
+		i = i | g;
+		i = i << 8;
+		i = i | r;
+		return i;
+	}
+
 	// ---------------------------------------------------------------------------
 	private void FillChips() {
 		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
