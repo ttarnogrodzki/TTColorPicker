@@ -114,7 +114,7 @@ public class MainWindowController {
 
 	// ---------------------------------------------------------------------------
 	@FXML
-	private void onbtnChipMouseClicked(MouseEvent event) {
+	private void onpaneChipMouseClicked(MouseEvent event) {
 		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
 		if (event.getSource() instanceof Pane) {
 			Pane btn = (Pane) event.getSource();
