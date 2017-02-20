@@ -3,7 +3,10 @@ package com.ttcolorpicker.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
@@ -136,21 +139,48 @@ public class MainWindowController {
 		dialog.setHeaderText("New palette name");
 		dialog.setContentText("Please enter new palette name:");
 		Optional<String> result = dialog.showAndWait();
-		// look Ma, lambda! 
-		result.ifPresent(name -> selectedPalette.Name = name );
+		// look Ma, lambda!
+		result.ifPresent(name -> selectedPalette.Name = name);
 		setData();
 	}
 
 	// ---------------------------------------------------------------------------
 	@FXML
 	private void onbtnDeleteMouseClicked(MouseEvent event) {
-		
+		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
+
+		if (selectedPalette != null) // TODO change to something more java-style
+		{
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.setTitle("Confirm deletion");
+			alert.setHeaderText("About delete of " + selectedPalette.Name);
+			alert.setContentText("Are you sure?");
+
+			Optional<ButtonType> result = alert.showAndWait();
+			if (result.get() == ButtonType.OK) {
+				PEController.Palettes.remove(selectedPalette);
+				setData();
+			}
+
+		} else {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Warning Dialog");
+			alert.setHeaderText("Nothing to delete");
+			// alert.setContentText("Careful with the next step!");
+			alert.showAndWait();
+		}
 	}
 
 	// ---------------------------------------------------------------------------
 	@FXML
 	private void onbtnNewMouseClicked(MouseEvent event) {
-
+		/*TextInputDialog dialog = new TextInputDialog("New palette");
+		dialog.setHeaderText("New palette name");
+		dialog.setContentText("Please enter new palette name:");
+		Optional<String> result = dialog.showAndWait();		
+		PEController.NewPaletteEntry(PaletteName, FillWithRandomValues);		
+		result.ifPresent(name -> selectedPalette.Name = name);
+		setData();*/
 	}
 
 	// ---------------------------------------------------------------------------
@@ -196,12 +226,18 @@ public class MainWindowController {
 	// ---------------------------------------------------------------------------
 	private void FillChips() {
 		PaletteEntry selectedPalette = cbSelectPalette.getSelectionModel().getSelectedItem();
-		for (int i = 0; i < 16; i++) {
-			if (selectedPalette.Colors[i] != Color.TRANSPARENT) {
-				Chips[i].setStyle("-fx-background-color: #" + toRGBCode(selectedPalette.Colors[i]));
-			} else {
-				Chips[i].setStyle("");
+
+		if (selectedPalette != null) // TODO to change
+		{
+			for (int i = 0; i < 16; i++) {
+				if (selectedPalette.Colors[i] != Color.TRANSPARENT) {
+					Chips[i].setStyle("-fx-background-color: #" + toRGBCode(selectedPalette.Colors[i]));
+				} else {
+					Chips[i].setStyle("");
+				}
+
 			}
+
 		}
 	}
 	// ---------------------------------------------------------------------------
