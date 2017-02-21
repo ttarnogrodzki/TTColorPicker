@@ -17,11 +17,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="755.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttcolorpicker.controller.MainWindowController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ttcolorpicker.controller.MainWindowController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox prefHeight="572.0" prefWidth="297.0">
          <children>
-            <TitledPane animated="false" prefHeight="101.0" prefWidth="328.0" text="Palettes">
+            <TitledPane animated="false" collapsible="false" maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="328.0" text="Palettes">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="295.0">
                      <children>
@@ -54,7 +54,7 @@
                   </AnchorPane>
               </content>
             </TitledPane>
-            <TitledPane animated="false" prefHeight="120.0" prefWidth="328.0" text="Chips">
+            <TitledPane animated="false" collapsible="false" maxHeight="120.0" minHeight="117.0" prefHeight="120.0" prefWidth="297.0" text="Chips">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="326.0">
                      <children>
@@ -91,7 +91,7 @@
                   </AnchorPane>
               </content>
             </TitledPane>
-            <TitledPane animated="false" text="Color">
+            <TitledPane animated="false" collapsible="false" text="Color">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="107.0" prefWidth="326.0">
                      <children>
@@ -133,7 +133,7 @@
                      </children></AnchorPane>
               </content>
             </TitledPane>
-            <TitledPane animated="false" text="Mixer">
+            <TitledPane animated="false" collapsible="false" text="Mixer">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="326.0">
                      <children>
@@ -165,11 +165,11 @@
                   </AnchorPane>
               </content>
             </TitledPane>
-            <TitledPane animated="false" text="Magnify">
+            <TitledPane animated="false" collapsible="false" prefHeight="141.0" prefWidth="297.0" text="Magnify">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="83.0" layoutY="-44.0" prefHeight="156.0" prefWidth="326.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Pane layoutX="18.6" layoutY="33.6" prefHeight="107.0" prefWidth="276.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
               </content>

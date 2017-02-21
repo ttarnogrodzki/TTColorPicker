@@ -1,18 +1,25 @@
 package com.ttcolorpicker.controller;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.util.Pair;
 
 import java.util.Optional;
 
@@ -174,13 +181,38 @@ public class MainWindowController {
 	// ---------------------------------------------------------------------------
 	@FXML
 	private void onbtnNewMouseClicked(MouseEvent event) {
-		/*TextInputDialog dialog = new TextInputDialog("New palette");
-		dialog.setHeaderText("New palette name");
-		dialog.setContentText("Please enter new palette name:");
-		Optional<String> result = dialog.showAndWait();		
-		PEController.NewPaletteEntry(PaletteName, FillWithRandomValues);		
-		result.ifPresent(name -> selectedPalette.Name = name);
-		setData();*/
+
+		Dialog<Pair<String, Boolean>> dialog = new Dialog<>();
+		dialog.setTitle("Login Dialog");
+		dialog.setHeaderText("Look, a Custom Login Dialog");
+		dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+		GridPane grid = new GridPane();
+		grid.setHgap(10);
+		grid.setVgap(10);
+		grid.setPadding(new Insets(20, 150, 10, 10));
+
+		TextField paletteName = new TextField();
+		paletteName.setPromptText("Palette name");
+		CheckBox randomValues = new CheckBox();
+		grid.add(new Label("Name:"), 0, 0);
+		grid.add(paletteName, 1, 0);
+		grid.add(new Label("Fill with random values:"), 0, 1);
+		grid.add(randomValues, 1, 1);
+		dialog.getDialogPane().setContent(grid);
+
+		Platform.runLater(() -> paletteName.requestFocus());
+
+		dialog.setResultConverter(dialogButton -> {
+			if (dialogButton == ButtonType.OK) {
+				return new Pair<>(paletteName.getText(), randomValues.isSelected());
+			}
+			return null;
+		});
+		Optional<Pair<String, Boolean>> result = dialog.showAndWait();
+		result.ifPresent(paletteInfo -> {
+			PEController.NewPaletteEntry(paletteInfo.getKey(), paletteInfo.getValue());
+			setData();
+		});
 	}
 
 	// ---------------------------------------------------------------------------
@@ -235,9 +267,7 @@ public class MainWindowController {
 				} else {
 					Chips[i].setStyle("");
 				}
-
 			}
-
 		}
 	}
 	// ---------------------------------------------------------------------------
