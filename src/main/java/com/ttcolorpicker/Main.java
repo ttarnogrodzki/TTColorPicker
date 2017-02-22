@@ -29,6 +29,7 @@ public class Main extends Application {
 		primaryStage.getIcons().add(new Image("/gfx/colorpicker.png"));
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("TTColorPicker");
+		primaryStage.resizableProperty().setValue(Boolean.FALSE);
 		primaryStage.show();
 	}
 
