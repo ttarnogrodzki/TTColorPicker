@@ -114,17 +114,17 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" text="#" GridPane.rowIndex="1">
+                                    <Button fx:id="btnColorHexCopyHash" mnemonicParsing="false" onMouseClicked="#onbtnColorHexCopyHashMouseClicked" text="#" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="10.0" />
                                        </font>
                                     </Button>
-                                    <Button mnemonicParsing="false" text="Copy" GridPane.columnIndex="2">
+                                    <Button fx:id="btnColorDecCopy" mnemonicParsing="false" onMouseClicked="#onbtnColorDecCopyMouseClicked" text="Copy" GridPane.columnIndex="2">
                                        <font>
                                           <Font size="10.0" />
                                        </font>
                                     </Button>
-                                    <Button mnemonicParsing="false" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <Button fx:id="btnColorHexCopy" mnemonicParsing="false" onMouseClicked="#onbtnColorHexCopyMouseClicked" text="Copy" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="10.0" />
                                        </font>

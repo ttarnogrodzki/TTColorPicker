@@ -15,12 +15,13 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.util.Pair;
-
 import java.util.Optional;
 
 import com.ttcolorpicker.data.PaletteEntry;
@@ -28,6 +29,7 @@ import com.ttcolorpicker.data.PaletteEntryController;
 
 public class MainWindowController {
 
+	boolean hashSelected = false;
 	Pane[] Chips = new Pane[16];
 	PaletteEntryController PEController = new PaletteEntryController();
 
@@ -82,6 +84,12 @@ public class MainWindowController {
 	private TextField edDecColorValue;
 	@FXML
 	private TextField edHexColorValue;
+	@FXML
+	private Button btnColorDecCopy;
+	@FXML
+	private Button btnColorHexCopy;
+	@FXML
+	private Button btnColorHexCopyHash;
 	/////////////////////////////////////////////////
 
 	public MainWindowController() {
@@ -223,6 +231,27 @@ public class MainWindowController {
 	}
 
 	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnColorDecCopyMouseClicked(MouseEvent event) {
+		PutTextToClipboard(edDecColorValue.getText());
+	}
+
+	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnColorHexCopyMouseClicked(MouseEvent event) {
+
+		String hash = hashSelected ? "#" : "";
+		PutTextToClipboard(hash + edHexColorValue.getText());
+
+	}
+
+	// ---------------------------------------------------------------------------
+	@FXML
+	private void onbtnColorHexCopyHashMouseClicked(MouseEvent event) {
+		hashSelected = !hashSelected;
+	}
+	// ---------------------------------------------------------------------------
+
 	public void setData() {
 		comboBoxData.clear();
 		for (PaletteEntry pe : PEController.Palettes) {
@@ -270,5 +299,12 @@ public class MainWindowController {
 			}
 		}
 	}
+
 	// ---------------------------------------------------------------------------
+	private void PutTextToClipboard(String AText) {
+		final Clipboard clipboard = Clipboard.getSystemClipboard();
+		final ClipboardContent content = new ClipboardContent();
+		content.putString(AText);
+		clipboard.setContent(content);
+	}
 }
