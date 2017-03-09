@@ -3,4 +3,16 @@
   <groupId> TT</groupId>
   <artifactId>TTColorPicker</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+  	<plugins>
+		<plugin>
+			<groupId>com.zenjava</groupId>
+			<artifactId>javafx-maven-plugin</artifactId>
+			<version>8.6.0</version>
+			<configuration>
+				<mainClass>Main</mainClass>
+			</configuration>
+		</plugin>
+  	</plugins>
+  </build>
 </project>
